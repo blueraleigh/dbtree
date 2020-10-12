@@ -44,6 +44,13 @@ UPDATE cost SET cost=2 WHERE i=2 AND j=1;
 SELECT * FROM mpr;              
 ```
 
+The `mpr` table holds the maximum parsimony reconstructions. It is a three
+column table: the first column is the node id; second column, downpass cost;
+third column, uppass cost. The downpass and uppass costs are stored as JSON
+arrays. Each item in the array holds the minimum downpass or uppass cost that
+can be achieved by setting a node's state equal to the character state with
+the same index as the index in the JSON array.
+
 The following performs a linear parsimony analysis of the logarithm of 
 squamate body masses binned into 10 categories.
 
